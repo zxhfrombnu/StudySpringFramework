@@ -1,8 +1,11 @@
 package com.helen.entities;
 
+import javax.sql.DataSource;
+
 public class BaseballGame implements Game {
 	private Team homeTeam;
 	private Team awayTeam;
+	private DataSource dataSource;
 	
 	public BaseballGame() {}
 	public BaseballGame(Team homeTeam, Team awayTeam) {
@@ -10,6 +13,10 @@ public class BaseballGame implements Game {
 		this.awayTeam = awayTeam;
 	}
 	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
 	@Override
 	public void setHomeTeam(Team team) {
 		this.homeTeam = team;
