@@ -3,7 +3,7 @@ package com.helen;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.helen.entities.Game;
+import com.helen.entities.BaseballGame;
 
 public class DemoWithSpring {
 	public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class DemoWithSpring {
 		ApplicationContext context = 
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		Game game = context.getBean("game", Game.class);
+		BaseballGame game = context.getBean("baseballGame", BaseballGame.class);
 		System.out.println(game.playGame());
 		
 		System.out.println("There are " + context.getBeanDefinitionCount());

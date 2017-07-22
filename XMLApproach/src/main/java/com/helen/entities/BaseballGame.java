@@ -2,9 +2,19 @@ package com.helen.entities;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BaseballGame implements Game {
+	@Autowired
+	@Qualifier("cubs")
 	private Team homeTeam;
+	@Autowired
+	@Qualifier("redSox")
 	private Team awayTeam;
+	@Autowired
 	private DataSource dataSource;
 	
 	public BaseballGame() {}
