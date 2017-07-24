@@ -1,6 +1,6 @@
-package java.com.helen.repositories;
+package com.helen.repositories;
 
-import java.com.helen.entities.Account;
+import com.helen.entities.Account;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;

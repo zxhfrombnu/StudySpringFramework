@@ -1,4 +1,4 @@
-package java.com.helen.entities;
+package com.helen.entities;
 
 import java.math.BigDecimal;
 
