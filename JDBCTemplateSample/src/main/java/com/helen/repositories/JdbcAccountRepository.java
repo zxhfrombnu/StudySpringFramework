@@ -15,7 +15,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Profile({"prod", "test"})
+@Profile("prod")
+//@Profile("test")
 public class JdbcAccountRepository implements AccountRepository {
 	private JdbcTemplate template;
 	private static long nextId = 4;
@@ -45,7 +46,7 @@ public class JdbcAccountRepository implements AccountRepository {
 
 	@Override
 	public Long createAccount(BigDecimal initialBalance) {
-		String sqlTxt = "insert into account(id,balance) value(?,?)";
+		String sqlTxt = "insert into account(id,balance) values(?,?)";
 		long id = nextId++;
 		int uc = template.update(sqlTxt, id, initialBalance);
 		return id;

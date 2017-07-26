@@ -22,7 +22,8 @@ import com.helen.entities.Account;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
 @Transactional
-@ActiveProfiles({"prod", "test"})
+@ActiveProfiles("prod")
+//@ActiveProfiles("test")
 public class JdbcAccountRepositoryTest {
 	@Autowired
 	private AccountRepository repository;

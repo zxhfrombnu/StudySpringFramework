@@ -24,6 +24,7 @@ public class AppConfig {
 	@Autowired
 	private Environment env;
 	
+	// if @ActiveProfiles("test"), it connect H2 database
 	@Bean(name = "dateSource", destroyMethod = "shutdown")
 	@Profile("test")
 	public DataSource dataSourceForTest() {
@@ -42,7 +43,8 @@ public class AppConfig {
 	public PlatformTransactionManager transactionManagerForTest() {
 		return new DataSourceTransactionManager(dataSourceForTest());
 	}
-	
+
+	// if @ActiveProfiles("prod"), it connect mysql database, specified in the application file.
 	@Bean(name = "dataSource")
 	@Profile("prod")
 	public DataSource dataSourceForProd() {
