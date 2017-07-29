@@ -1,18 +1,17 @@
 package com.helen.services;
 
-import com.helen.entities.Account;
-import com.helen.repositories.AccountRepository;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.helen.entities.Account;
+import com.helen.repositories.AccountRepository;
+
 @Service
 @Transactional
-@Profile("test")
 public class AccountService {
 	@Autowired
 	private AccountRepository repository;
