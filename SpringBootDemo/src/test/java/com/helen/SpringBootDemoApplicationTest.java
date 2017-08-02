@@ -18,9 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.helen.entities.Account;
 import com.helen.repositories.AccountRepository;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes = SpringBootDemoApplication.class)
-//@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
