@@ -1,0 +1,2 @@
+my:
+  messageValue: ${random.value}
