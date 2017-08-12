@@ -3,18 +3,22 @@ package com.helen.boot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 @Controller
 public class WebApplication {
-	@RequestMapping("mustache")
-	public String mustache(Model model) {
-		model.addAttribute("company", "OReilly");
+	@RequestMapping("/thymeleaf")
+	public String thymeleaf() {
 		return "template";
 	}
+
+//	@RequestMapping("mustache")
+//	public String mustache(Model model) {
+//		model.addAttribute("company", "OReilly");
+//		return "template";
+//	}
 
 	@RequestMapping("viewresolver")
 	public String viewResolver() {
