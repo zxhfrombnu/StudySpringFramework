@@ -2,12 +2,14 @@ package com.helen.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 @Controller
+@ServletComponentScan
 public class WebApplication {
 	@RequestMapping("/thymeleaf")
 	public String thymeleaf() {
