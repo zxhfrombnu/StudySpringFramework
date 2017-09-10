@@ -1,5 +1,6 @@
 package com.helen.demo;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,8 +19,9 @@ public class GreetingController {
      * @return
      */
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return HELLO_VALUE + name;
+    public String greeting(@RequestParam(value="name", defaultValue="World") String name,  Model model) {
+    		model.addAttribute("name", HELLO_VALUE + name);
+        return "greeting";
     }
     
     /**
@@ -29,7 +31,8 @@ public class GreetingController {
      * @return
      */
     @RequestMapping(value = "/getStatus", method = RequestMethod.GET)
-    public String getStatus(@RequestParam(value="id") int id) {
-    		return ID_VALUE + String.valueOf(id);
+    public String getStatus(@RequestParam(value="id") int id,  Model model) {
+    		model.addAttribute("name", ID_VALUE + String.valueOf(id));
+    		return "greeting";
     }
 }
