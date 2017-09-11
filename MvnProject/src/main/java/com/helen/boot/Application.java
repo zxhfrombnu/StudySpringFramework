@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@RestController
+//@RestController
 @SpringBootApplication
 
 //@Configuration
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 //@Import(MyConfiguration.class)
-
+@Controller
 public class Application {
 	@Value("${name}")
 	String name;
@@ -25,11 +26,14 @@ public class Application {
 	@Autowired
 	String message;
 
-	@RequestMapping("/")
-	public String home() {
+	//please access the url: http://localhost:9001/test/
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Model model) {
 		//return "Hello World";
 		//return name;
-		return message;
+		//return message;
+		model.addAttribute("message", message);
+        return "index";
 	}
 
 	public static void main(String[] args) {
