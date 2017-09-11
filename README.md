@@ -1,5 +1,7 @@
 # StudySpringFramework
 
+This repository is for studying Spring project. 
+
 This open source project is using YourKit profiler for performance enhancement
 <img src="https://www.yourkit.com/images/yklogo.png"></img>
 
