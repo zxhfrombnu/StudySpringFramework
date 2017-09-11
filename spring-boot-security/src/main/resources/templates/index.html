@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style type ="text/css" >
+   .footer{ 
+       position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+   }  
+</style>
+
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <p th:text="${principal}" />
+    <div class="footer">
+    		<p>
+    			This open source project is using YourKit profiler for performance enhancement
+    			<img src="https://www.yourkit.com/images/yklogo.png"></img>
+    		</p>
+
+	    <p>YourKit supports open source projects with its full-featured Java Profiler.</p>
+		<p>YourKit, LLC is the creator of <a href="https://www.yourkit.com/java/profiler/">YourKit Java Profiler</a>
+		and <a href="https://www.yourkit.com/.net/profiler/">YourKit .NET Profiler</a>,</p>
+		<p>innovative and intelligent tools for profiling Java and .NET applications.</p>
+	</div>
+</body>
+</html>

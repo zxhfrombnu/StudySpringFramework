@@ -7,18 +7,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 //@EnableWebSecurity
 @EnableOAuth2Sso
-@RestController
+//@RestController
+@Controller
 public class SpringBootSecurityApplication extends WebSecurityConfigurerAdapter {
 	
+//	@RequestMapping("/user")
+//	public Principal user(Principal principal) {
+//		return principal;
+//	}
 	@RequestMapping("/user")
-	public Principal user(Principal principal) {
-		return principal;
+	public String user(Principal principal, Model model) {
+		model.addAttribute("principal", principal);
+		return "index";
 	}
 
 	@Override
