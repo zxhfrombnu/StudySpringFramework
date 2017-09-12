@@ -22,7 +22,7 @@ public class SpringBootJdbcApplication {
 	// access the url : http://localhost:8080/stocks
 	@RequestMapping("/stocks")
 	public String stocks(Model model) {
-		List<Map<String, Object>> result = template.queryForList("select * from stock_helen");
+		List<Map<String, Object>> result = template.queryForList("select * from stock");
 		model.addAttribute("stocks", result);
 		return "index";
 	}
