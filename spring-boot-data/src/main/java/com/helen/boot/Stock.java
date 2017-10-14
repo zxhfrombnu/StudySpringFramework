@@ -10,6 +10,7 @@ public class Stock {
 	private String companyName;
 	private String symbol;
 	private double price;
+	private String ceo;
 	public int getStockId() {
 		return stockId;
 	}
@@ -34,5 +35,10 @@ public class Stock {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+	public String getCeo() {
+		return ceo;
+	}
+	public void setCeo(String ceo) {
+		this.ceo = ceo;
+	}
 }

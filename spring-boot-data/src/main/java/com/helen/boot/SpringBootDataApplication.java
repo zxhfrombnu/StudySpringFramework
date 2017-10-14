@@ -33,6 +33,19 @@ public class SpringBootDataApplication {
 	public Stock stock(@PathVariable("symbol") String symbol) {
 		return repo.findBySymbol(symbol);
 	}
+
+	// access uri http://localhost:8080/stocks/create
+	@RequestMapping("/stocks/create")
+	public String createStock() {
+		Stock stock = new Stock();
+		stock.setCeo("Helen");
+		stock.setCompanyName("Shop");
+		stock.setPrice(100);
+		stock.setStockId(1);
+		stock.setSymbol("Shop");
+		repo.save(stock);
+		return "created";
+	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDataApplication.class, args);
