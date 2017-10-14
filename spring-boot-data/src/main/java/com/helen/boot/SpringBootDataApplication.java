@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,9 @@ public class SpringBootDataApplication {
 	@Autowired
 	private EntityManager em;
 	
+	@Autowired
+	private StockRepository repo;
+	
 	// for tomcat server access the url : http://localhost:8080/stocks
 	// it tries to use h2 database by default
 	@RequestMapping("/stocks")
@@ -24,6 +28,12 @@ public class SpringBootDataApplication {
 		return em.createQuery("select s from Stock s").getResultList();
 	}
 
+	// http://localhost:8080/stocks/VMW
+	@RequestMapping("/stocks/{symbol}")
+	public Stock stock(@PathVariable("symbol") String symbol) {
+		return repo.findBySymbol(symbol);
+	}
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDataApplication.class, args);
 	}
